@@ -189,8 +189,8 @@ for order in orders:
     quantity = order["Quantity"]
 
     # 8. Calculate the number of spaces for formatted printing
-    num_spaces_item = 30 - len(item_name)
-    num_spaces_price = 10 - len(str(price))
+    num_spaces_item = 26 - len(item_name)
+    num_spaces_price = 6 - len(str(price))
     num_spaces_quantity = 10 - len(str(quantity))
 
     # 9. Create space strings
@@ -205,4 +205,4 @@ for order in orders:
 # Multiply the price by quantity for each item in the order list, then sum()
 # and print the prices.
 total_cost = sum([order["Price"] * order["Quantity"] for order in orders])
-print("\nTotal Cost: $", total_cost)
+print(f"\nYour total for today will be: \n ${round(total_cost, 3)}")
